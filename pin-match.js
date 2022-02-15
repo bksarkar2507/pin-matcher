@@ -31,5 +31,18 @@ document.getElementById('key-pad').addEventListener('click', function(event){
 });
 
 document.getElementById('submit-button').addEventListener('click', function(){
-    console.log('submit button is clicked');
+    const randomPin = document.getElementById('displayGeneratePin').value;
+    const typedPin = document.getElementById('typed-pin').value;
+
+
+    if(randomPin == typedPin){
+        console.log('matched');
+        document.getElementById('match-notify').style.display = 'block';
+        document.getElementById('not-match-notify').style.display = 'none';
+    }
+    else{
+        console.log('not matched');
+        document.getElementById('not-match-notify').style.display='block';
+        document.getElementById('match-notify').style.display = 'none';
+    }
 });
